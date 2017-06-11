@@ -1,0 +1,15 @@
+{
+  "private": true,
+  "scripts": {
+    "start": "watchify -dv -t vueify -e src/index.js -o out/app.js"
+  },
+  "dependencies": {
+    "browserify": "^14.4.0",
+    "vue": "^2.3.3",
+    "vueify": "^9.4.1",
+    "vuex": "^2.3.1"
+  },
+  "devDependencies": {
+    "watchify": "^3.9.0"
+  }
+}
