@@ -7,9 +7,7 @@
 <script>
 module.exports = {
 	data() {
-		const items = this.$store.state.items;
-		const id = this.$route.params.id;
-		return items.find(d=>d.id===id);
+		return this.$store.state.items.find(d=>d.id===this.$route.params.id);
 	},
 };
 </script>
