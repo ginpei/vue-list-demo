@@ -9,6 +9,12 @@ module.exports = new Vuex.Store({
 		checked: {},
 	},
 
+	getters: {
+		someChecked(state) {
+			return Object.values(state.checked).some(d=>d);
+		},
+	},
+
 	mutations: {
 		SET_ITEMS(state, value) {
 			state.items = value;

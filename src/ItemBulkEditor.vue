@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<button disabled>Delete</button>
+		<button :disabled="!$store.getters.someChecked">Delete</button>
 	</div>
 </template>
 
