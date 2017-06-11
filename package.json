@@ -1,6 +1,7 @@
 {
   "private": true,
   "scripts": {
+    "postinstall": "mkdir out || true",
     "start": "watchify -dv -t vueify -e src/index.js -o out/app.js"
   },
   "dependencies": {
