@@ -7,3 +7,10 @@ new Vue({  // eslint-disable-line no-new
 	store,
 	render: f=>f(App),
 });
+
+const items = [
+	{ id: 'abc123', name: 'pppp' },
+	{ id: 'foo999', name: 'App' },
+	{ id: 'xyz987', name: 'Appp' },
+];
+store.dispatch('setItems', items);

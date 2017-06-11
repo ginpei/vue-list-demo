@@ -1,6 +1,8 @@
 <template>
 	<tr>
-		<td class="row-checkbox"><input type="checkbox" /></td>
+		<td class="row-checkbox">
+			<input v-model="$store.state.checked[id]" type="checkbox" />
+		</td>
 		<td class="row-name">{{name}}</td>
 	</tr>
 </template>
