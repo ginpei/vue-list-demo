@@ -3,7 +3,9 @@
 		<td class="row-checkbox">
 			<input v-model="$store.state.checked[id]" type="checkbox" />
 		</td>
-		<td class="row-name">{{name}}</td>
+		<td class="row-name">
+			<router-link :to="url">{{name}}</router-link>
+		</td>
 		<td class="row-actions">
 			<button @click="edit_onClick">Edit</button>
 			<button @click="delete_onClick">Delete</button>
@@ -21,6 +23,12 @@ module.exports = {
 	props: [ 'row' ],
 	data() {
 		return this.row;
+	},
+
+	computed: {
+		url() {
+			return `/tasks/${this.id}`;
+		},
 	},
 
 	methods: {
