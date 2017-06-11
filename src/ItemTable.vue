@@ -28,7 +28,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			<item-table-row v-for="d in items" :row="d"></item-table-row>
+			<item-table-row v-for="d in $store.state.items" :row="d"></item-table-row>
 		</tbody>
 	</table>
 </template>
@@ -43,11 +43,6 @@ module.exports = {
 
 	data() {
 		return {
-			items: [
-				{ name: 'pppp' },
-				{ name: 'App' },
-				{ name: 'Appp' },
-			],
 		};
 	},
 };
