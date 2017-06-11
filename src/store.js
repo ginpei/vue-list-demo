@@ -24,8 +24,8 @@ module.exports = new Vuex.Store({
 			state.items = value;
 		},
 
-		INIT_CHECKED( state, items) {
-			state.checked = state.items.reduce((r,d)=>(r[d.id]=false,r),{});
+		INIT_CHECKED(state, items) {
+			state.checked = state.items.reduce((r,d)=>(r[d.id]=state.checked[d.id]||false,r),{});
 		},
 
 		TOGGLE_CHECKED_ALL(state, value) {
