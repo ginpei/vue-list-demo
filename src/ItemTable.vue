@@ -17,6 +17,9 @@
 }
 .itemTable .row-name {
 }
+.itemTable .row-actions {
+	width: 10em;
+}
 </style>
 
 <template>
@@ -27,6 +30,7 @@
 					<input :checked="$store.getters.allChecked" @click="allCheckbox_onClick" type="checkbox" />
 				</th>
 				<th class="row-name">Name</th>
+				<th class="row-actions"></th>
 			</tr>
 		</thead>
 		<tbody>
