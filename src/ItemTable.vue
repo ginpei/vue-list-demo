@@ -23,7 +23,9 @@
 	<table class="itemTable">
 		<thead>
 			<tr>
-				<th class="row-checkbox"><input type="checkbox" /></th>
+				<th class="row-checkbox">
+					<input :checked="$store.getters.allChecked" @click="allCheckbox_onClick" type="checkbox" />
+				</th>
 				<th class="row-name">Name</th>
 			</tr>
 		</thead>
@@ -44,6 +46,13 @@ module.exports = {
 	data() {
 		return {
 		};
+	},
+
+	methods: {
+		allCheckbox_onClick(event) {
+			const checked = event.currentTarget.checked;
+			this.$store.dispatch('toggleCheckAll', checked);
+		},
 	},
 };
 </script>

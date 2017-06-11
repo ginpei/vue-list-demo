@@ -13,6 +13,10 @@ module.exports = new Vuex.Store({
 		someChecked(state) {
 			return Object.values(state.checked).some(d=>d);
 		},
+
+		allChecked(state) {
+			return Object.values(state.checked).every(d=>d);
+		},
 	},
 
 	mutations: {
@@ -23,6 +27,11 @@ module.exports = new Vuex.Store({
 		INIT_CHECKED( state, value) {
 			state.checked = value;
 		},
+
+		TOGGLE_CHECKED_ALL(state, value) {
+			const o = state.checked;
+			Object.keys(o).forEach(d=>o[d]=value);
+		},
 	},
 
 	actions: {
@@ -31,6 +40,10 @@ module.exports = new Vuex.Store({
 
 			const checked = items.reduce((r,d)=>(r[d.id]=false,r),{});
 			commit('INIT_CHECKED', checked);
+		},
+
+		toggleCheckAll({ commit }, checked) {
+			commit('TOGGLE_CHECKED_ALL', checked);
 		},
 	},
 });
