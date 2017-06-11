@@ -5,7 +5,6 @@ Vue.use(Vuex);
 
 module.exports = new Vuex.Store({
 	state: {
-		world: 'World',
 	},
 
 	mutations: {
