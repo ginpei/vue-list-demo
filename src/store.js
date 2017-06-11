@@ -65,6 +65,8 @@ module.exports = new Vuex.Store({
 
 		removeItems({ commit }, ids) {
 			ids.forEach(id=>commit('REMOVE_ITEM', id));
+
+			commit('INIT_CHECKED');
 		},
 	},
 });
