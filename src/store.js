@@ -36,6 +36,13 @@ module.exports = new Vuex.Store({
 		ADD_ITEM(state, value) {
 			state.items.push(value);
 		},
+
+		REMOVE_ITEM(state, id) {
+			const index = state.items.findIndex(d=>d.id===id);
+			if (index >= 0) {
+				state.items.splice(index, 1);
+			}
+		},
 	},
 
 	actions: {
@@ -54,6 +61,10 @@ module.exports = new Vuex.Store({
 			commit('ADD_ITEM', data);
 
 			commit('INIT_CHECKED');
+		},
+
+		removeItems({ commit }, ids) {
+			ids.forEach(id=>commit('REMOVE_ITEM', id));
 		},
 	},
 });
