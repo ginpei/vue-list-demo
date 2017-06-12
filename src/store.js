@@ -15,7 +15,7 @@ module.exports = new Vuex.Store({
 		},
 
 		allChecked(state) {
-			return Object.values(state.checked).every(d=>d);
+			return state.checked.length > 0 && Object.values(state.checked).every(d=>d);
 		},
 	},
 
